@@ -14,14 +14,8 @@ img {
     height: auto;
     display: block;
 }
-    .project img {
-    width: 100%;
-    max-width: 650px;
-    height: auto;
-    margin: 20px 0;
-    border-radius: 12px;
-}
-    * {
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -49,7 +43,6 @@ a {
 }
 
 /* NAVIGATION */
-
 nav {
     position: sticky;
     top: 0;
@@ -93,7 +86,6 @@ nav {
 }
 
 /* HERO */
-
 .hero {
     min-height: 88vh;
     display: flex;
@@ -190,7 +182,6 @@ h1 {
 }
 
 /* SECTIONS */
-
 section {
     padding: 110px 0;
     border-bottom: 1px solid #1d1d1d;
@@ -211,7 +202,6 @@ section {
 }
 
 /* ABOUT */
-
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -238,68 +228,129 @@ section {
     background: #0a0a0a;
 }
 
-/* PROJECTS */
-
+/* CASE STUDIES */
 .projects {
     display: grid;
-    gap: 24px;
+    gap: 32px;
 }
 
 .project {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 35px;
-    padding: 35px;
+    display: block;
+    padding: 42px;
     border: 1px solid #292929;
-    border-radius: 10px;
+    border-radius: 14px;
     background: #0a0a0a;
     transition: .25s;
 }
-
- .project > img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-}   
 
 .project:hover {
     border-color: #555;
     transform: translateY(-3px);
 }
 
+.project-header {
+    max-width: 900px;
+    margin-bottom: 30px;
+}
+
 .project-number {
     color: #666;
     font-size: 13px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 .project h3 {
-    font-size: 27px;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
     margin-bottom: 12px;
 }
 
-.project p {
-    color: #aaa;
-    margin-bottom: 18px;
+.project-context {
+    color: #999;
+    font-size: 16px;
+    max-width: 780px;
 }
 
-.tags {
+.case-study-main-image {
+    width: 100%;
+    max-height: 540px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 30px 0 45px;
+    border: 1px solid #222;
+}
+
+.case-study-section {
+    max-width: 900px;
+    margin-bottom: 38px;
+}
+
+.case-study-section h4 {
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    color: #f5f5f5;
+}
+
+.case-study-section p {
+    color: #aaa;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.case-study-section ul {
+    margin: 0 0 18px 20px;
+    color: #aaa;
+}
+
+.case-study-section li {
+    margin-bottom: 8px;
+}
+
+.supporting-visual {
+    width: min(340px, 42%);
+    height: 220px;
+    object-fit: cover;
+    border-radius: 9px;
+    border: 1px solid #252525;
+    margin: 10px 0 42px;
+}
+
+.supporting-visual.right {
+    margin-left: auto;
+}
+
+.skills-demonstrated {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 9px;
+    margin-top: 15px;
 }
 
 .tag {
     border: 1px solid #333;
-    padding: 6px 10px;
+    padding: 7px 11px;
     border-radius: 20px;
-    color: #999;
+    color: #aaa;
     font-size: 12px;
+    background: #080808;
+}
+
+.case-study-outcome {
+    padding: 22px 24px;
+    border-left: 2px solid #777;
+    background: #0d0d0d;
+    margin-top: 10px;
+}
+
+.case-study-outcome p {
+    margin-bottom: 0;
 }
 
 /* EXPERIENCE */
-
 .timeline {
     border-left: 1px solid #333;
     margin-left: 8px;
@@ -344,7 +395,6 @@ section {
 }
 
 /* PROCESS */
-
 .process {
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -373,7 +423,6 @@ section {
 }
 
 /* CONTACT */
-
 .contact {
     text-align: center;
     padding: 140px 0;
@@ -392,7 +441,6 @@ section {
 }
 
 /* FOOTER */
-
 footer {
     padding: 35px 0;
     color: #666;
@@ -406,9 +454,7 @@ footer {
 }
 
 /* MOBILE */
-
 @media(max-width: 800px) {
-
     .nav-links {
         display: none;
     }
@@ -419,8 +465,7 @@ footer {
     }
 
     .hero-grid,
-    .about-grid,
-    .project {
+    .about-grid {
         grid-template-columns: 1fr;
     }
 
@@ -435,17 +480,27 @@ footer {
     section {
         padding: 80px 0;
     }
+
+    .project {
+        padding: 28px;
+    }
+
+    .supporting-visual,
+    .supporting-visual.right {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+    }
 }
 
 @media(max-width: 520px) {
-
     .process,
     .skills {
         grid-template-columns: 1fr;
     }
 
     .project {
-        padding: 25px;
+        padding: 22px;
     }
 
     .footer-inner {
@@ -460,7 +515,6 @@ footer {
 <nav>
     <div class="container nav-inner">
         <div class="logo">Emmanuel <span>Churchill</span></div>
-
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#work">Work</a></li>
@@ -473,25 +527,17 @@ footer {
 <main>
 
 <!-- HERO -->
-
 <section class="hero">
     <div class="container hero-grid">
-
         <div>
             <div class="eyebrow">Product Manager · Digital Products</div>
-
-            <h1>
-                I build products<br>
-                <span>people actually need.</span>
-            </h1>
-
+            <h1>I build products<br><span>people actually need.</span></h1>
             <p class="hero-text">
                 I'm Emmanuel Churchill, a Product Manager focused on
                 customer discovery, product strategy, cross-functional
                 execution and turning real-world problems into useful
                 digital products.
             </p>
-
             <div class="buttons">
                 <a class="btn btn-primary" href="#work">View my work</a>
                 <a class="btn" href="#contact">Let's talk</a>
@@ -499,68 +545,27 @@ footer {
         </div>
 
         <div class="hero-card">
-
             <h3>Product Management Focus</h3>
-
-            <p>
-                From understanding the problem to validating solutions,
-                aligning teams and shipping products that create value.
-            </p>
-
-            <div class="metric">
-                <span>Product experience</span>
-                <strong>3+ yrs</strong>
-            </div>
-
-            <div class="metric">
-                <span>Product areas</span>
-                <strong>Software</strong>
-            </div>
-
-            <div class="metric">
-                <span>Core tool</span>
-                <strong>Jira</strong>
-            </div>
-
+            <p>From understanding the problem to validating solutions, aligning teams and shipping products that create value.</p>
+            <div class="metric"><span>Product experience</span><strong>3+ yrs</strong></div>
+            <div class="metric"><span>Product areas</span><strong>Software</strong></div>
+            <div class="metric"><span>Core tool</span><strong>Jira</strong></div>
         </div>
-
     </div>
 </section>
 
-
 <!-- ABOUT -->
-
 <section id="about">
     <div class="container">
-
         <div class="section-label">01 — About</div>
-
         <h2 class="section-title">How I think about products.</h2>
-
         <div class="about-grid">
-
             <div>
-                <p>
-                    I approach Product Management by starting with the
-                    problem rather than jumping straight to a solution.
-                </p>
-
-                <p>
-                    I believe strong products come from understanding
-                    customers deeply, validating assumptions, working
-                    closely with technical and business teams, and
-                    continuously learning from the market.
-                </p>
-
-                <p>
-                    My background gives me a multidisciplinary perspective
-                    that helps me connect users, business objectives and
-                    technology.
-                </p>
+                <p>I approach Product Management by starting with the problem rather than jumping straight to a solution.</p>
+                <p>I believe strong products come from understanding customers deeply, validating assumptions, working closely with technical and business teams, and continuously learning from the market.</p>
+                <p>My background gives me a multidisciplinary perspective that helps me connect users, business objectives and technology.</p>
             </div>
-
             <div class="skills">
-
                 <div class="skill">Product Strategy</div>
                 <div class="skill">Customer Discovery</div>
                 <div class="skill">Market Research</div>
@@ -569,294 +574,256 @@ footer {
                 <div class="skill">Agile Delivery</div>
                 <div class="skill">Stakeholder Management</div>
                 <div class="skill">Jira</div>
-
             </div>
-
         </div>
-
     </div>
 </section>
 
-
 <!-- WORK -->
-
 <section id="work">
     <div class="container">
-
         <div class="section-label">02 — Selected Work</div>
-
         <h2 class="section-title">Products & case studies.</h2>
 
         <div class="projects">
 
+            <!-- CASE STUDY 01 -->
             <article class="project">
-<img src="20230615_113356.jpg" alt="Vensemart market discovery and radio outreach">
-                <div>
+                <div class="project-header">
                     <div class="project-number">CASE STUDY 01</div>
                     <h3>Market Discovery & Product Development</h3>
-                </div>            
-                                 
-    <p>
-        <strong>The Challenge</strong><br>
-        Before development, the team needed to understand the real problems customers and service providers faced in their day-to-day efforts to connect and complete transactions.
-Through our initial discovery, we identified significant gaps in how customers from different estates were able to find, connect with, and engage reliable service providers and artisans. Customers often struggled to identify the right providers for their needs, while service providers faced challenges reaching potential customers and managing these interactions effectively.
-    </p>
+                    <p class="project-context">Turning field research and customer insight into clearer product opportunities for a two-sided service marketplace.</p>
+                </div>
 
-   <p>
-       
-       <strong>My Approach</strong><br>
-        I worked closely with the team throughout the market and user research process, helping us move beyond assumptions and develop a clearer understanding of the problems affecting both customers and service providers.
-I contributed to identifying and engaging relevant service providers and artisans, including going door-to-door to discover genuine providers and understand how they operated in their day-to-day environments. I also participated in gathering customer and service-provider insights, documenting recurring pain points, identifying gaps in the existing process, and comparing the needs of both sides of the marketplace.
-I then translated these research findings into product considerations, helping the team prioritize the problems that were most relevant to the users we were trying to serve. This gave the development team a stronger foundation for designing features and workflows around validated user problems rather than assumptions.
-    </p>
+                <img class="case-study-main-image" src="20230615_113356.jpg" alt="Vensemart market discovery and radio outreach">
 
-   <p>
-        
-       <strong>My Contribution</strong><br>
-        I worked closely with the team throughout the market discovery and user research process, helping to gather, interpret, and translate insights from both customers and service providers into actionable product considerations. I focused on understanding user needs, pain points, expectations, behaviours, and recurring challenges, while helping the team distinguish between assumptions and problems that were consistently validated through research.
-I contributed to prioritizing user needs and research insights based on their relevance to the product opportunity, helping the team determine which problems required greater attention during product development. I also worked with stakeholders to connect these insights to product requirements, user experiences, and potential solutions, ensuring that development decisions remained grounded in the realities of the target users.
-My contribution extended beyond gathering information; I helped bridge the gap between research and product execution, ensuring that what we learned from the market could influence what we ultimately built. This helped the team maintain a user-centred approach throughout development and focus resources on solving validated customer and service-provider problems rather than building around assumptions.    </p>
+                <div class="case-study-section">
+                    <h4>The Challenge</h4>
+                    <p>Before development, the team needed to understand the real problems customers and service providers faced when trying to find, connect with, and engage one another.</p>
+                    <p>Initial discovery revealed gaps on both sides of the marketplace. Customers could struggle to identify reliable providers for specific needs, while artisans and service providers had difficulty reaching potential customers and managing those interactions effectively.</p>
+                    <p>The product challenge was therefore broader than simply building a marketplace. We needed to understand the behaviours, trust concerns, discovery patterns and operational realities that would determine whether the product could create value for both sides.</p>
+                </div>
 
-    <p>
-        
-        <strong>PM Skills Demonstrated</strong><br>
-        Customer Discovery · User Research · Market Research · Product Strategy · Stakeholder Engagement
-    </p>
-</div>
-                    </p>
+                <img class="supporting-visual" src="20230615_113407.jpg" alt="Supporting field research activity">
 
-                   
+                <div class="case-study-section">
+                    <h4>My Approach</h4>
+                    <p>I worked closely with the team throughout market and user research, helping us move beyond assumptions and develop a clearer picture of the problem space.</p>
+                    <p>I contributed to identifying and engaging relevant service providers and artisans, including going door-to-door to discover genuine providers and understand how they operated in their day-to-day environments.</p>
+                    <p>I also helped gather customer and provider insights, document recurring pain points, compare the needs of both sides of the marketplace, and identify patterns that could influence product decisions. These findings were translated into product considerations so that feature and workflow decisions were connected to validated user problems.</p>
+                </div>
+
+                <img class="supporting-visual right" src="20230615_113409.jpg" alt="Supporting customer and provider discovery activity">
+
+                <div class="case-study-section">
+                    <h4>My Contribution</h4>
+                    <p>I helped bridge the gap between research and product execution. My role involved gathering and interpreting insights, distinguishing assumptions from recurring problems, and helping the team determine which user needs deserved greater attention.</p>
+                    <p>I contributed to prioritising research findings based on their relevance to the product opportunity and worked with stakeholders to connect those insights to product requirements, user experiences and potential solutions.</p>
+                    <p>This meant my contribution was not limited to collecting information. I helped turn what we learned from the market into clearer product decisions, keeping development focused on solving meaningful customer and service-provider problems.</p>
+                </div>
+
+                <img class="supporting-visual" src="20230615_114759.jpg" alt="Supporting product discovery and stakeholder engagement">
+
+                <div class="case-study-section">
+                    <h4>Skills Demonstrated</h4>
+                    <p>The project demonstrates how I connect customer discovery with product strategy and execution, particularly in an environment where the needs of multiple user groups must be considered together.</p>
+                    <div class="skills-demonstrated">
+                        <span class="tag">Customer Discovery</span>
+                        <span class="tag">User Research</span>
+                        <span class="tag">Market Research</span>
+                        <span class="tag">Product Strategy</span>
+                        <span class="tag">Problem Framing</span>
+                        <span class="tag">Prioritisation</span>
+                        <span class="tag">Stakeholder Engagement</span>
                     </div>
                 </div>
 
+                <img class="supporting-visual right" src="20230615_113356.jpg" alt="Supporting market discovery visual">
+
+                <div class="case-study-outcome">
+                    <p><strong>Product thinking:</strong> The strongest outcome of the discovery work was a clearer connection between real user problems, product priorities and what the team ultimately needed to build.</p>
+                </div>
             </article>
 
-
+            <!-- CASE STUDY 02 -->
             <article class="project">
-<img src="20230430_181845.jpg" alt="Software and Mobile App Product Development">
-                <div>
+                <div class="project-header">
                     <div class="project-number">CASE STUDY 02</div>
                     <h3>Software & Mobile App Products</h3>
+                    <p class="project-context">Working across software and mobile products to translate user and business needs into structured product requirements and deliverable experiences.</p>
                 </div>
 
-                <div>
-                    <p>
-                        Worked across software and mobile product
-                        development, collaborating with cross-functional
-                        teams to translate product requirements into
-                        deliverable experiences.
-                    </p>
+                <img class="case-study-main-image" src="20230430_181845.jpg" alt="Software and Mobile App Product Development">
 
-                    <div class="tags">
-                        <span class="tag">Mobile</span>
-                        <span class="tag">Software</span>
-                        <span class="tag">Agile</span>
+                <div class="case-study-section">
+                    <h4>The Challenge</h4>
+                    <p>Software and mobile products require more than defining a feature and handing it to engineering. The product team must create enough clarity for designers and engineers to understand the user problem, expected behaviour, constraints and intended outcome.</p>
+                    <p>My focus was therefore on helping turn broad product needs into clearer requirements and workable experiences while keeping the user problem and business objective visible throughout delivery.</p>
+                </div>
+
+                <img class="supporting-visual" src="20230505_124612.jpg" alt="Supporting software product development visual">
+
+                <div class="case-study-section">
+                    <h4>My Approach</h4>
+                    <p>I approached product development as a cross-functional process. I worked with stakeholders to understand the desired outcome, broke broader requirements into clearer product needs, and helped communicate those requirements to the people responsible for design and engineering.</p>
+                    <p>I used Agile ways of working to support incremental delivery, prioritisation and feedback. This helped the team focus on the most important product behaviour first rather than treating the entire product as one large delivery task.</p>
+                    <p>I also paid attention to edge cases, user flows and dependencies so that requirements were not only understandable but useful during implementation.</p>
+                </div>
+
+                <img class="supporting-visual right" src="20230505_124705.jpg" alt="Supporting mobile product workflow visual">
+
+                <div class="case-study-section">
+                    <h4>My Contribution</h4>
+                    <p>I contributed to the product-development cycle by helping translate business and user needs into actionable product requirements, clarifying expected behaviour and maintaining alignment between stakeholders and the delivery team.</p>
+                    <p>I supported prioritisation and refinement, worked through questions raised during implementation, and helped keep product decisions connected to the intended user experience.</p>
+                    <p>This strengthened the link between product discovery and execution: what users needed informed what we prioritised, and what we prioritised informed what the team built.</p>
+                </div>
+
+                <img class="supporting-visual" src="20230505_124715.jpg" alt="Supporting product execution visual">
+
+                <div class="case-study-section">
+                    <h4>Skills Demonstrated</h4>
+                    <p>This work demonstrates my ability to operate between users, business stakeholders and technical teams, turning product intent into delivery-ready thinking.</p>
+                    <div class="skills-demonstrated">
+                        <span class="tag">Product Requirements</span>
+                        <span class="tag">Mobile Products</span>
+                        <span class="tag">Software Products</span>
+                        <span class="tag">Agile Delivery</span>
+                        <span class="tag">Prioritisation</span>
+                        <span class="tag">Cross-functional Collaboration</span>
                         <span class="tag">Jira</span>
                     </div>
                 </div>
 
+                <img class="supporting-visual right" src="20230505_124724.jpg" alt="Supporting software and mobile product delivery visual">
+
+                <div class="case-study-outcome">
+                    <p><strong>Product thinking:</strong> I focus on creating clarity between the problem, the requirement and the delivered experience so teams can move faster without losing sight of user value.</p>
+                </div>
             </article>
 
-
+            <!-- CASE STUDY 03 -->
             <article class="project">
-<img src="20230610_115245.jpg" alt="Customer and field engagement">
-                <div>
+                <div class="project-header">
                     <div class="project-number">CASE STUDY 03</div>
                     <h3>Customer-Centred Product Discovery</h3>
+                    <p class="project-context">Using customer research and stakeholder insight to identify meaningful problems, prioritise opportunities and shape product outcomes.</p>
                 </div>
 
-                <div>
-                    <p>
-                    
-                                Used customer research and stakeholder  
-                            insights to identify real user needs,
-                                uncover pain points, and connect them 
-                            with business objectives and technical
-                                possibilities. Translated these 
-                            insights into clear priorities that helped
-                                teams focus on meaningful product outcomes.
-</p>
-                    
-                        
-                         
-                    
-                    <div class="tags">
-                        <span class="tag">Prioritization</span>
+                <img class="case-study-main-image" src="20230610_115245.jpg" alt="Customer and field engagement">
+
+                <div class="case-study-section">
+                    <h4>The Challenge</h4>
+                    <p>A product can fail even when the underlying technology works if the team solves the wrong problem. The challenge was to create enough understanding of customers and stakeholders before committing product effort to a particular solution.</p>
+                    <p>This required looking beyond feature requests and asking what users were actually trying to achieve, where existing experiences were breaking down, and which problems were important enough to influence product priorities.</p>
+                </div>
+
+                <img class="supporting-visual" src="20230610_115258.jpg" alt="Supporting customer discovery and field engagement">
+
+                <div class="case-study-section">
+                    <h4>My Approach</h4>
+                    <p>I used customer and stakeholder conversations to uncover needs, pain points, expectations and recurring patterns. Rather than treating every request as an immediate feature requirement, I looked for the underlying problem and the outcome the user was trying to achieve.</p>
+                    <p>I then connected those insights with business objectives and technical possibilities. This helped create a more balanced view of product opportunities: what customers valued, what the business needed, and what the team could realistically deliver.</p>
+                    <p>From there, I helped turn research into clearer priorities so the team could focus its effort on problems with meaningful product value.</p>
+                </div>
+
+                <img class="supporting-visual right" src="20230610_115245.jpg" alt="Supporting customer-centred discovery visual">
+
+                <div class="case-study-section">
+                    <h4>My Contribution</h4>
+                    <p>I contributed to the discovery process by helping gather customer insights, identify recurring needs and translate qualitative feedback into product considerations.</p>
+                    <p>I also helped connect user evidence to prioritisation. This meant considering factors such as customer impact, relevance to the product opportunity, business objectives and the practical ability of the team to respond.</p>
+                    <p>The result was a more evidence-led approach to product thinking, where customer feedback could influence what we chose to solve and why.</p>
+                </div>
+
+                <img class="supporting-visual" src="20230610_115258.jpg" alt="Supporting product discovery insight visual">
+
+                <div class="case-study-section">
+                    <h4>Skills Demonstrated</h4>
+                    <p>I bring a customer-centred mindset to product decisions, using research and stakeholder insight to improve problem definition, prioritisation and product direction.</p>
+                    <div class="skills-demonstrated">
+                        <span class="tag">Customer Research</span>
+                        <span class="tag">Product Discovery</span>
+                        <span class="tag">Problem Framing</span>
+                        <span class="tag">Prioritisation</span>
+                        <span class="tag">Stakeholder Management</span>
                         <span class="tag">Product Thinking</span>
-                        <span class="tag">Stakeholders</span>
+                        <span class="tag">Outcome Focus</span>
                     </div>
                 </div>
 
+                <img class="supporting-visual right" src="20230610_115245.jpg" alt="Supporting customer-centred product discovery visual">
+
+                <div class="case-study-outcome">
+                    <p><strong>Product thinking:</strong> Customer-centred discovery gives the team a stronger basis for deciding what to build, what not to build and where product effort can create the most meaningful value.</p>
+                </div>
             </article>
 
         </div>
-
     </div>
 </section>
-
 
 <!-- PROCESS -->
-
 <section>
     <div class="container">
-
-        <div class="section-label"style="font=weight:700;">Product Process</div>
-
+        <div class="section-label">Product Process</div>
         <h2 class="section-title">From problem to product.</h2>
-
         <div class="process">
-
-            <div class="process-card">
-                <span>01</span>
-                <h3>Discover</h3>
-                <p>
-                    Understand customers, markets and the problem space.
-                </p>
-            </div>
-
-            <div class="process-card">
-                <span>02</span>
-                <h3>Define</h3>
-                <p>
-                    Frame the problem, opportunities and desired outcomes.
-                </p>
-            </div>
-
-            <div class="process-card">
-                <span>03</span>
-                <h3>Build</h3>
-                <p>
-                    Work with cross-functional teams to deliver the
-                    right solution.
-                </p>
-            </div>
-
-            <div class="process-card">
-                <span>04</span>
-                <h3>Learn</h3>
-                <p>
-                    Measure outcomes, gather feedback and continuously
-                    improve the product.
-                </p>
-            </div>
-
+            <div class="process-card"><span>01</span><h3>Discover</h3><p>Understand customers, markets and the problem space.</p></div>
+            <div class="process-card"><span>02</span><h3>Define</h3><p>Frame the problem, opportunities and desired outcomes.</p></div>
+            <div class="process-card"><span>03</span><h3>Build</h3><p>Work with cross-functional teams to deliver the right solution.</p></div>
+            <div class="process-card"><span>04</span><h3>Learn</h3><p>Measure outcomes, gather feedback and continuously improve the product.</p></div>
         </div>
-
     </div>
 </section>
-
 
 <!-- EXPERIENCE -->
-
 <section id="experience">
     <div class="container">
-
         <div class="section-label">04 — Experience</div>
-
         <h2 class="section-title">My professional journey.</h2>
-
         <div class="timeline">
-
             <div class="timeline-item">
-
                 <div class="timeline-date">PRODUCT MANAGEMENT</div>
-
                 <h3>IT Product Manager</h3>
-
                 <h4>Software & Mobile Products</h4>
-
-                <p>
-                    Managed product development activities across
-                    software and mobile products, working with
-                    cross-functional teams and using Agile practices
-                    to move products from ideas toward delivery.
-                </p>
-
+                <p>Managed product development activities across software and mobile products, working with cross-functional teams and using Agile practices to move products from ideas toward delivery.</p>
             </div>
-
-
             <div class="timeline-item">
-
                 <div class="timeline-date">EDUCATION & DEVELOPMENT</div>
-
                 <h3>Professional Development</h3>
-
                 <h4>Postgraduate Development</h4>
-
-                <p>
-                    Continued professional development while building
-                    a career at the intersection of business,
-                    technology and product management.
-                </p>
-
+                <p>Continued professional development while building a career at the intersection of business, technology and product management.</p>
             </div>
-
-
             <div class="timeline-item">
-
                 <div class="timeline-date">FOUNDATION</div>
-
                 <h3>Bachelor's Degree in Music</h3>
-
                 <h4>Academic Background</h4>
-
-                <p>
-                    Developed communication, creativity, discipline
-                    and structured problem-solving skills that continue
-                    to influence my approach to product management.
-                </p>
-
+                <p>Developed communication, creativity, discipline and structured problem-solving skills that continue to influence my approach to product management.</p>
             </div>
-
         </div>
-
     </div>
 </section>
 
-
 <!-- CONTACT -->
-
 <section id="contact" class="contact">
     <div class="container">
-
         <div class="section-label">05 — Contact</div>
-
         <h2>Let's build something useful.</h2>
-
-        <p>
-            I'm open to Product Management opportunities,
-            collaborations and conversations around building
-            impactful digital products.
-        </p>
-
+        <p>I'm open to Product Management opportunities, collaborations and conversations around building impactful digital products.</p>
         <div class="buttons" style="justify-content:center;">
-
-            <a class="btn btn-primary"
-               href="mailto:emmanuelchurchill@gmail.com">
-                Email me
-            </a>
-
-            <a class="btn"
-               href="https://www.linkedin.com/in/emmanuel-churchill-8945b9223/"
-               target="_blank">
-                LinkedIn
-            </a>
-
+            <a class="btn btn-primary" href="mailto:emmanuelchurchill@gmail.com">Email me</a>
+            <a class="btn" href="https://www.linkedin.com/in/emmanuel-churchill-8945b9223/" target="_blank">LinkedIn</a>
         </div>
-
     </div>
 </section>
 
 </main>
 
-
 <footer>
     <div class="container footer-inner">
-
         <div>© 2026 Emmanuel Churchill</div>
-
         <div>Product Manager · Abuja, Nigeria</div>
-
     </div>
 </footer>
 
